@@ -26,11 +26,7 @@ export const getCompareObjectByKeys = (keys: string[], obj: object) => {
  * @param prev
  * @param next
  */
-export const isComponentNeedUpdate = (
-  keys: string[],
-  prev: object,
-  next: object
-) =>
+export const isComponentNeedUpdate = (keys: string[], prev: object, next: object) =>
   JSON.stringify(getCompareObjectByKeys(keys, prev)) !==
   JSON.stringify(getCompareObjectByKeys(keys, next));
 
@@ -39,7 +35,7 @@ export const isComponentNeedUpdate = (
  * @param newState
  */
 export const setTabBarState = (newState: object, scope) => {
-  if (scope && typeof scope.getTabBar === "function" && scope.getTabBar()) {
+  if (scope && typeof scope.getTabBar === 'function' && scope.getTabBar()) {
     scope.getTabBar().$component.setState(newState);
   }
 };
