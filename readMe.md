@@ -4,7 +4,7 @@
  * @作者: 廖军
  * @Date: 2020-02-19 17:24:13
  * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-10 17:41:50
+ * @LastEditTime: 2020-04-10 17:57:32
  -->
 
 ### pont 适配与改进
@@ -15,7 +15,6 @@
 
 ### taro 其他需要注意的地方
 
-
 1. 全局变量在小程序中以 global 的声明存在，而不是 window，对应的 lodash 和之前的全局保存参数的方式都要修改；
 2. 添加自定义组件的时候，涉及全局样式，需要添加 option addGlobalClass 为 true 才能生效；
 3. iceStore 本身依赖 react，所以需要更改源码来适配 taro，并且不能使用最新版本，最新版本需要 Provider 才能使用，同样不适用 taro；
@@ -23,17 +22,16 @@
 5. taro 的路由配置在 app.ts config.pages 中；
 6. 如果有一些需要定制的组件可以先到物料市场看一下（当然也要做个评估再用，不好用就自己定制）：https://taro-ext.jd.com/
 7. iceStore useStore 方法依赖与 hooks 方法，在不同的平台下，需要引入对应的 taro 包，否则会报错的；
-8. 组件只能 export default 组件本身，不能附带导出其他变量，否则会报 Component 类的错；
-9. taro 可支持 JSX 的组件间传递，但是元素传入 JSX 的属性名必须以 render 开头如: renderHeader；
-10. taro 目前不支持 Fragments；
-11. taro ScrollView onRefresherRefresh 方法可被触发的前提条件是内容区可滚动且开启 refresherEnabled ，同时可用 refresherTriggered 控制 refresh 状态，配合 useRefresh 函数使用；
-12. taro 向自定义组件传递 class 可以用 externalClasses = ['my-class']的方式，可以参考 https://nervjs.github.io/taro/docs/component-style.html#%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F%E7%B1%BB
-13. my-class 方法在 h5 环境会有问题，需要再添加一个 props['my-class']来兼容；
-14. 登录: 微信小程序现在需要用点击 openType="getPhoneNumber" 按钮回调的方式来获取手机号加密信息进而向后端请求解密手机号，要获取用户信息则用 openType="getUserInfo" 的按钮,Taro.getUserInfo 方法将被微信废弃。
-15. 登录: 最好把 session_key 保存在后端，如果保存在前端会有多端登录 session_key 失效的问题。
-16. 需要在每个样式头写 /*postcss-pxtransform disable*/,因为 pxtransform 会自动转换px为 rpx，又因为 taro-ui 的库本身样式大小是正常的两倍需要经过pxtransform转换，如果全局disable pxtransform会导致 taro-ui 的库的样式会是两倍大小。
-17. 要设置底部TabBar的徽标显示可在 custom-tab-bar 文件中先设置 tab-bar 对应的 badgeField 作为 badge 字段名，再在 state 中维护。若要修改则调用在 utils/object 中的 setTabBarState 函数修改对应的 badgeField 字段的属性值，若情况较复杂可保存在本地缓存。
-18. 在 Taro 中，JS 代码里必须书写单引号，特别是 JSX 中，如果出现双引号，可能会导致编译错误。
+8. taro 可支持 JSX 的组件间传递，但是元素传入 JSX 的属性名必须以 render 开头如: renderHeader；
+9. taro 目前不支持 Fragments；
+10. taro ScrollView onRefresherRefresh 方法可被触发的前提条件是内容区可滚动且开启 refresherEnabled ，同时可用 refresherTriggered 控制 refresh 状态，配合 useRefresh 函数使用；
+11. taro 向自定义组件传递 class 可以用 externalClasses = ['my-class']的方式，可以参考 https://nervjs.github.io/taro/docs/component-style.html#%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F%E7%B1%BB
+12. my-class 方法在 h5 环境会有问题，需要再添加一个 props['my-class']来兼容；
+13. 登录: 微信小程序现在需要用点击 openType="getPhoneNumber" 按钮回调的方式来获取手机号加密信息进而向后端请求解密手机号，要获取用户信息则用 openType="getUserInfo" 的按钮,Taro.getUserInfo 方法将被微信废弃。
+14. 登录: 最好把 session_key 保存在后端，如果保存在前端会有多端登录 session_key 失效的问题。
+15. 需要在每个样式头写 /*postcss-pxtransform disable*/,因为 pxtransform 会自动转换px为 rpx，又因为 taro-ui 的库本身样式大小是正常的两倍需要经过pxtransform转换，如果全局disable pxtransform会导致 taro-ui 的库的样式会是两倍大小。
+16. 要设置底部TabBar的徽标显示可在 custom-tab-bar 文件中先设置 tab-bar 对应的 badgeField 作为 badge 字段名，再在 state 中维护。若要修改则调用在 utils/object 中的 setTabBarState 函数修改对应的 badgeField 字段的属性值，若情况较复杂可保存在本地缓存。
+17. 在 Taro 中，JS 代码里必须书写单引号，特别是 JSX 中，如果出现双引号，可能会导致编译错误。
 
 ### 微信小程序需要注意的地方
 
