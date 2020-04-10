@@ -6,8 +6,8 @@
  * @LastEditors: 阮旭松
  * @LastEditTime: 2020-04-09 17:45:00
  */
-import { PageModel } from "@/interfaces/common";
-import { INITIAL_PAGINATION } from "./constant";
+import { PageModel } from '@/interfaces/common';
+import { INITIAL_PAGINATION } from './constant';
 
 const baseStore = {
   pagination: INITIAL_PAGINATION as PageModel,
@@ -24,7 +24,7 @@ const baseStore = {
   /** 设置分页 */
   setPagination(pagination) {
     this.pagination = pagination;
-  }
+  },
 };
 
 export default baseStore;

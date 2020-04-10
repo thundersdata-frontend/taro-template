@@ -6,10 +6,10 @@
  * @LastEditors: 阮旭松
  * @LastEditTime: 2020-04-10 14:42:42
  */
-import Taro from "@tarojs/taro";
-import classnames from "classnames";
-import { SizeType } from "@/interfaces/common";
-import { AtBadge } from "taro-ui";
+import Taro from '@tarojs/taro';
+import classnames from 'classnames';
+import { SizeType } from '@/interfaces/common';
+import { AtBadge } from 'taro-ui';
 
 // 徽标最大溢出数字
 const MAX_OVERFIOW_NUMBER = 99;
@@ -36,21 +36,15 @@ const Badge: Taro.FC<BadgeProps> = props => {
     dot,
     maxValue = MAX_OVERFIOW_NUMBER,
     value,
-    size = "default",
+    size = 'default',
     children,
     className,
-    style = {}
+    style = {},
   } = props;
-  const displayNumber = value === ZERO_NUMBER ? "" : value;
+  const displayNumber = value === ZERO_NUMBER ? '' : value;
   return (
     <AtBadge
-      className={classnames(
-        "badge",
-        `${size}-badge`,
-        className,
-        "my-class",
-        props["my-class"]
-      )}
+      className={classnames('badge', `${size}-badge`, className, 'my-class', props['my-class'])}
       value={displayNumber}
       dot={dot}
       maxValue={maxValue}
@@ -62,9 +56,9 @@ const Badge: Taro.FC<BadgeProps> = props => {
 };
 
 Badge.options = {
-  addGlobalClass: true
+  addGlobalClass: true,
 };
 
-Badge.externalClasses = ["my-class"];
+Badge.externalClasses = ['my-class'];
 
 export default Badge;

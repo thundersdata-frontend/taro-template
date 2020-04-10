@@ -7,20 +7,20 @@
  * @LastEditors: 阮旭松
  * @LastEditTime: 2020-04-09 17:49:03
  */
-import IceStore from "@/utils/@ice/store";
-import logger from "@ice/store-logger";
-import { Middleware } from "@/utils/@ice/store/lib/types";
-import baseStore from "./base";
+import IceStore from '@/utils/@ice/store';
+import logger from '@ice/store-logger';
+import { Middleware } from '@/utils/@ice/store/lib/types';
+import baseStore from './base';
 
 const iceStore = new IceStore();
 const middleware: Middleware[] = [];
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== 'production') {
   middleware.push(logger);
 }
 iceStore.applyMiddleware(middleware);
 
 const stores = iceStore.registerStores({
-  baseStore
+  baseStore,
 });
 export default stores;

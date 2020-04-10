@@ -54,4 +54,4 @@ export interface PageModel {
   pageSize: number;
 }
 
-export type SizeType = "small" | "default" | "large";
+export type SizeType = 'small' | 'default' | 'large';
