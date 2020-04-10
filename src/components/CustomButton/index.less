@@ -1,0 +1,53 @@
+/*postcss-pxtransform disable*/
+@import (reference) "../../styles/common.less";
+
+@component-name: customButton-;
+
+.@{component-name}btn {
+  padding: 0 20px;
+  font-size: 12px;
+  border-radius: 18px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.@{component-name}primary {
+  background: @primary-color;
+  border-style: none !important;
+  color: #fff;
+}
+
+.@{component-name}dashed {
+  border: 1px dashed @primary-color;
+}
+
+.@{component-name}solid {
+  border: 1px solid @primary-color;
+  color: @primary-color;
+}
+
+.@{component-name}graySolid {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.@{component-name}link {
+  color: @primary-color;
+}
+
+.@{component-name}disable {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.@{component-name}largeSize {
+  font-size: @size-large;
+}
+.@{component-name}defaultSize {
+  font-size: @size-default;
+}
+.@{component-name}smallSize {
+  font-size: @size-small;
+}

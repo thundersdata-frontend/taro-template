@@ -1,0 +1,63 @@
+/*postcss-pxtransform disable*/
+.tabBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: white;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tabBarBorder {
+  background-color: rgba(0, 0, 0, 0.33);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+}
+
+.tabBarItem {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tabBarItem cover-image {
+  width: 24px;
+  height: 24px;
+}
+
+.tabBarItem cover-view {
+  font-size: 12px;
+}
+
+.badgeContainer {
+  position: relative;
+  width: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .badge {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 20px;
+    padding: 0 1px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: rgba(250, 58, 34, 1);
+    font-size: 11px;
+    color: #fff;
+  }
+}
