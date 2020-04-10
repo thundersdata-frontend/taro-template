@@ -4,7 +4,7 @@
  * @作者: 阮旭松
  * @Date: 2020-04-07 15:15:12
  * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-10 16:40:55
+ * @LastEditTime: 2020-04-10 18:39:59
  */
 import Taro, { useDidShow, useScope } from '@tarojs/taro';
 import { View } from '@tarojs/components';
@@ -23,7 +23,7 @@ const Home: Taro.FC = () => {
   return (
     <View className={styles.container}>
       <CustomButton
-        onClick={() => Taro.navigateTo({ url: '/pages/packageA/pages/detail/index' })}
+        onClick={() => Taro.navigateTo({ url: '/packageA/pages/detail/index' })}
         className="buttonGroup-leftBtn"
       >
         前往详情页

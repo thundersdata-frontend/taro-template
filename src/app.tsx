@@ -4,7 +4,7 @@
  * @作者: 廖军
  * @Date: 2020-03-17 11:57:17
  * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-09 18:44:53
+ * @LastEditTime: 2020-04-10 18:38:56
  */
 import Taro, { Component, Config } from '@tarojs/taro';
 import lodashFix from '@/utils/lodash-fix.js';
@@ -81,8 +81,8 @@ class App extends Component {
     // 分包
     subPackages: [
       {
-        root: 'pages/packageA/pages',
-        pages: ['detail/index'],
+        root: 'packageA',
+        pages: ['pages/detail/index'],
       },
     ],
     window: {
