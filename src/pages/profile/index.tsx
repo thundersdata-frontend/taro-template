@@ -4,17 +4,17 @@
  * @作者: 阮旭松
  * @Date: 2020-03-11 18:30:37
  * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-09 18:44:04
+ * @LastEditTime: 2020-04-10 16:45:57
  */
-import Taro, { useDidShow, useState, useScope } from "@tarojs/taro";
-import { View, OpenData } from "@tarojs/components";
-import { AtButton, AtAvatar } from "taro-ui";
-import ListItemCard from "@/components/ListItemCard";
-import { tryCatch, checkIsLogin } from "@/utils/exception-handling";
-import { BOTTOM_TABS_MAP } from "@/stores/constant";
-import { transformSecretPhone } from "@/utils/string";
-import { setTabBarState } from "@/utils/object";
-import styles from "./index.module.less";
+import Taro, { useDidShow, useState, useScope } from '@tarojs/taro';
+import { View, OpenData } from '@tarojs/components';
+import { AtButton, AtAvatar } from 'taro-ui';
+import ListItemCard from '@/components/ListItemCard';
+import { tryCatch, checkIsLogin } from '@/utils/exception-handling';
+import { BOTTOM_TABS_MAP } from '@/stores/constant';
+import { transformSecretPhone } from '@/utils/string';
+import { setTabBarState } from '@/utils/object';
+import styles from './index.module.less';
 
 const Profile: Taro.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -35,9 +35,9 @@ const Profile: Taro.FC = () => {
   // 调用获取手机号等信息
   const getPhoneNumber = e => {
     // 若点击允许
-    if (e.detail.errMsg.indexOf("ok") > -1) {
+    if (e.detail.errMsg.indexOf('ok') > -1) {
       // e.detail.encryptedData为加密数据，向后端请求解密的手机号
-      console.log("e: ", e);
+      console.log('e: ', e);
       setIsLogin(true);
     }
   };
@@ -46,7 +46,7 @@ const Profile: Taro.FC = () => {
   const handleLogOut = async () => {
     await Taro.clearStorage();
     setIsLogin(false);
-    Taro.showToast({ title: "退出登录成功!", icon: "success" });
+    Taro.showToast({ title: '退出登录成功!', icon: 'success' });
   };
 
   return (
@@ -59,19 +59,14 @@ const Profile: Taro.FC = () => {
             <AtAvatar
               className={styles.avator}
               circle
-              image={require("@/assets/pic_avatar_default.png")}
+              image={require('@/assets/pic_avatar_default.png')}
             />
           )}
         </View>
         {isLogin ? (
           <View className={styles.userNameWrap}>
-            <OpenData
-              className={styles.userName}
-              type="userNickName"
-            ></OpenData>
-            <View className={styles.phoneWrap}>
-              {transformSecretPhone("15711111111")}
-            </View>
+            <OpenData className={styles.userName} type="userNickName"></OpenData>
+            <View className={styles.phoneWrap}>{transformSecretPhone('15711111111')}</View>
           </View>
         ) : (
           <AtButton
@@ -85,11 +80,11 @@ const Profile: Taro.FC = () => {
       </View>
       <ListItemCard
         title="联系客服"
-        titleStyle={{ fontSize: "16px", color: "#333" }}
+        titleStyle={{ fontSize: '16px', color: '#333' }}
         borderBottom
         extraText="40012341234"
         extraIcon="icon_detail_service"
-        extraIconStyle={{ color: "#00A200", fontSize: "16px" }}
+        extraIconStyle={{ color: '#00A200', fontSize: '16px' }}
       />
       {isLogin && (
         <View className={styles.loginOutBtn} onClick={handleLogOut}>
@@ -101,7 +96,7 @@ const Profile: Taro.FC = () => {
 };
 
 Profile.config = {
-  navigationBarTitleText: "我的"
+  navigationBarTitleText: '我的',
 };
 
 export default Profile;

@@ -6,34 +6,34 @@
  * @LastEditors: 阮旭松
  * @LastEditTime: 2020-04-10 13:53:43
  */
-import Taro from "@tarojs/taro";
-import { CoverView, CoverImage } from "@tarojs/components";
-import { GlobalData } from "@/interfaces/common";
-import { isEqual } from "lodash";
-import styles from "./index.module.less";
+import Taro from '@tarojs/taro';
+import { CoverView, CoverImage } from '@tarojs/components';
+import { GlobalData } from '@/interfaces/common';
+import { isEqual } from 'lodash';
+import styles from './index.module.less';
 
 const list = [
   {
-    pagePath: "/pages/home/index",
-    text: "首页",
-    iconPath: "../assets/tabBarImgs/icn_tab_home_normal.png",
-    selectedIconPath: "../assets/tabBarImgs/icn_tab_home_focus.png",
-    badgeField: "homeBadge"
+    pagePath: '/pages/home/index',
+    text: '首页',
+    iconPath: '../assets/tabBarImgs/icn_tab_home_normal.png',
+    selectedIconPath: '../assets/tabBarImgs/icn_tab_home_focus.png',
+    badgeField: 'homeBadge',
   },
   {
-    pagePath: "/pages/profile/index",
-    text: "我的",
-    iconPath: "../assets/tabBarImgs/icn_tab_my_normal.png",
-    selectedIconPath: "../assets/tabBarImgs/icn_tab_my_focus.png",
-    badgeField: "profileBadge"
-  }
+    pagePath: '/pages/profile/index',
+    text: '我的',
+    iconPath: '../assets/tabBarImgs/icn_tab_my_normal.png',
+    selectedIconPath: '../assets/tabBarImgs/icn_tab_my_focus.png',
+    badgeField: 'profileBadge',
+  },
 ];
 
 class CustomTabBar extends Taro.Component {
   state = {
     selected: ((global as unknown) as GlobalData).globalData.selectedIndex,
     /** badge number 对应字段 badgeField */
-    profileBadge: 1
+    profileBadge: 1,
   };
 
   shouldComponentUpdate = (_nextProps, nextState) => {
@@ -62,21 +62,14 @@ class CustomTabBar extends Taro.Component {
               key={item.text}
             >
               <CoverView className={styles.badgeContainer}>
-                <CoverImage
-                  src={isSelected ? item.selectedIconPath : item.iconPath}
-                />
-                <CoverView
-                  style={{ display: badgeNum ? "" : "none" }}
-                  className={styles.badge}
-                >
-                  {badgeNum >= 100 ? "99+" : badgeNum}
+                <CoverImage src={isSelected ? item.selectedIconPath : item.iconPath} />
+                <CoverView style={{ display: badgeNum ? '' : 'none' }} className={styles.badge}>
+                  {badgeNum >= 100 ? '99+' : badgeNum}
                 </CoverView>
               </CoverView>
               <CoverView
                 style={{
-                  color: isSelected
-                    ? "rgba(0, 162, 0, 1)"
-                    : "rgba(0, 0, 0, 0.6)"
+                  color: isSelected ? 'rgba(0, 162, 0, 1)' : 'rgba(0, 0, 0, 0.6)',
                 }}
               >
                 {item.text}

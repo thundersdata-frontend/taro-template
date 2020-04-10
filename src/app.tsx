@@ -6,18 +6,18 @@
  * @LastEditors: 阮旭松
  * @LastEditTime: 2020-04-09 18:44:53
  */
-import Taro, { Component, Config } from "@tarojs/taro";
-import lodashFix from "@/utils/lodash-fix.js";
-import compatibility from "@/utils/compatibility";
-import { CustomWindow, GlobalData } from "@/interfaces/common";
-import "taro-ui/dist/style/components/badge.scss";
-import "taro-ui/dist/style/components/button.scss";
-import "taro-ui/dist/style/components/loading.scss";
-import "taro-ui/dist/style/components/float-layout.scss";
-import "taro-ui/dist/style/components/avatar.scss";
-import Index from "./pages/home/index";
-import "./app.less";
-import "./assets/iconfont/iconfont.css";
+import Taro, { Component, Config } from '@tarojs/taro';
+import lodashFix from '@/utils/lodash-fix.js';
+import compatibility from '@/utils/compatibility';
+import { CustomWindow, GlobalData } from '@/interfaces/common';
+import 'taro-ui/dist/style/components/badge.scss';
+import 'taro-ui/dist/style/components/button.scss';
+import 'taro-ui/dist/style/components/loading.scss';
+import 'taro-ui/dist/style/components/float-layout.scss';
+import 'taro-ui/dist/style/components/avatar.scss';
+import Index from './pages/home/index';
+import './app.less';
+import './assets/iconfont/iconfont.css';
 
 // 环境兼容
 compatibility();
@@ -26,17 +26,17 @@ lodashFix();
 ((global as unknown) as CustomWindow).requestConfig = {
   withCredentials: false,
   getToken() {
-    const accessToken = Taro.getStorageSync("access_token");
+    const accessToken = Taro.getStorageSync('access_token');
     return Promise.resolve(accessToken);
-  }
+  },
 };
 ((global as unknown) as CustomWindow).authConfig = {
-  url: "",
-  client_id: "",
-  client_secret: "",
+  url: '',
+  client_id: '',
+  client_secret: '',
   password_min: 6,
   password_max: 20,
-  company: 0
+  company: 0,
 };
 ((global as unknown) as GlobalData).globalData = { selectedIndex: 0 };
 
@@ -55,47 +55,47 @@ class App extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    pages: ["pages/home/index", "pages/profile/index"],
+    pages: ['pages/home/index', 'pages/profile/index'],
     tabBar: {
       custom: true, // 使用custom-tab-bar
-      color: "rgba(0, 0, 0, 0.6)",
-      selectedColor: "rgba(0, 162, 0, 1)",
-      backgroundColor: "#fff",
-      borderStyle: "white",
+      color: 'rgba(0, 0, 0, 0.6)',
+      selectedColor: 'rgba(0, 162, 0, 1)',
+      backgroundColor: '#fff',
+      borderStyle: 'white',
       // 这些配置无法省略
       list: [
         {
-          pagePath: "pages/home/index",
-          text: "首页",
-          iconPath: "./assets/tabBarImgs/icn_tab_home_normal.png",
-          selectedIconPath: "./assets/tabBarImgs/icn_tab_home_focus.png"
+          pagePath: 'pages/home/index',
+          text: '首页',
+          iconPath: './assets/tabBarImgs/icn_tab_home_normal.png',
+          selectedIconPath: './assets/tabBarImgs/icn_tab_home_focus.png',
         },
         {
-          pagePath: "pages/profile/index",
-          text: "我的",
-          iconPath: "./assets/tabBarImgs/icn_tab_my_normal.png",
-          selectedIconPath: "./assets/tabBarImgs/icn_tab_my_focus.png"
-        }
-      ]
+          pagePath: 'pages/profile/index',
+          text: '我的',
+          iconPath: './assets/tabBarImgs/icn_tab_my_normal.png',
+          selectedIconPath: './assets/tabBarImgs/icn_tab_my_focus.png',
+        },
+      ],
     },
     // 分包
     subPackages: [
       {
-        root: "pages/packageA/pages",
-        pages: ["detail/index"]
-      }
+        root: 'pages/packageA/pages',
+        pages: ['detail/index'],
+      },
     ],
     window: {
-      backgroundTextStyle: "light",
-      navigationBarBackgroundColor: "#fff",
-      navigationBarTitleText: "WeChat",
-      navigationBarTextStyle: "black"
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black',
     },
     permission: {
-      "scope.userLocation": {
-        desc: "快捷定位，生鲜果蔬为你配送到家" // 高速公路行驶持续后台定位
-      }
-    }
+      'scope.userLocation': {
+        desc: '快捷定位，生鲜果蔬为你配送到家', // 高速公路行驶持续后台定位
+      },
+    },
   };
 
   // 在 App 类中的 render() 函数没有实际作用
@@ -105,4 +105,4 @@ class App extends Component {
   }
 }
 
-Taro.render(<App />, document.getElementById("app"));
+Taro.render(<App />, document.getElementById('app'));
