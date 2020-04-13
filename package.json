@@ -26,6 +26,7 @@
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
     "dev:quickapp": "npm run build:quickapp -- --watch",
+    "build:cordova": "taro build --type h5 \"cordova\"",
     "tsc": "tsc -p ./tsconfig.json",
     "commit": "git-cz",
     "eslint:fix": "eslint --fix --ext .ts,.tsx src/",

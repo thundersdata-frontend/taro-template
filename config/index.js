@@ -4,9 +4,11 @@
  * @作者: 廖军
  * @Date: 2020-02-16 14:24:58
  * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-10 11:40:15
+ * @LastEditTime: 2020-04-13 11:28:15
  */
 const path = require('path');
+// 是否打包成cordova所需要的www文件内容
+const isCordova = process.argv.includes('cordova');
 
 const config = {
   projectName: 'taro-project',
@@ -18,7 +20,7 @@ const config = {
     '828': 1.81 / 2,
   },
   sourceRoot: 'src',
-  outputRoot: 'build',
+  outputRoot: isCordova ? 'www' : 'build',
   alias: {
     '@/utils': path.resolve(__dirname, '../src/utils'),
     '@/stores': path.resolve(__dirname, '../src/stores'),
@@ -89,7 +91,7 @@ const config = {
     },
   },
   h5: {
-    publicPath: '/',
+    publicPath: isCordova ? './' : '/', // cordova 里面的路径规则有所区别
     staticDirectory: 'static',
     postcss: {
       autoprefixer: {
