@@ -33,6 +33,7 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-empty-function': 'warn',
     '@typescript-eslint/camelcase': 'off',
+    '@typescript-eslint/no-var-requires': 'warn',
     'react/prop-types': 'off',
     'react/display-name': 'off',
     'react/no-deprecated': 'warn',
