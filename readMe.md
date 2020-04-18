@@ -4,7 +4,7 @@
  * @作者: 廖军
  * @Date: 2020-02-19 17:24:13
  * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-10 18:18:41
+ * @LastEditTime: 2020-04-18 14:42:58
  -->
 
 ### pont 适配与改进
@@ -27,9 +27,8 @@
 10. taro ScrollView onRefresherRefresh 方法可被触发的前提条件是内容区可滚动且开启 refresherEnabled ，同时可用 refresherTriggered 控制 refresh 状态，配合 useRefresh 函数使用；
 11. taro 向自定义组件传递 class 可以用 externalClasses = ['my-class']的方式，可以参考 https://nervjs.github.io/taro/docs/component-style.html#%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F%E7%B1%BB
 12. my-class 方法在 h5 环境会有问题，需要再添加一个 props['my-class']来兼容；
-13. 需要在每个样式头写 /*postcss-pxtransform disable*/,因为 pxtransform 会自动转换px为 rpx，又因为 taro-ui 的库本身样式大小是正常的两倍需要经过pxtransform转换，如果全局disable pxtransform会导致 taro-ui 的库的样式会是两倍大小。
-14. 要设置底部TabBar的徽标显示可在 custom-tab-bar 文件中先设置 tab-bar 对应的 badgeField 作为 badge 字段名，再在 state 中维护。若要修改则调用在 utils/object 中的 setTabBarState 函数修改对应的 badgeField 字段的属性值，若情况较复杂可保存在本地缓存。
-15. 在 Taro 中，JS 代码里必须书写单引号，特别是 JSX 中，如果出现双引号，可能会导致编译错误。
+13. 要设置底部TabBar的徽标显示可在 custom-tab-bar 文件中先设置 tab-bar 对应的 badgeField 作为 badge 字段名，再在 state 中维护。若要修改则调用在 utils/object 中的 setTabBarState 函数修改对应的 badgeField 字段的属性值，若情况较复杂可保存在本地缓存。
+14. 在 Taro 中，JS 代码里必须书写单引号，特别是 JSX 中，如果出现双引号，可能会导致编译错误。
 
 ### 微信小程序需要注意的地方
 

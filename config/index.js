@@ -4,7 +4,7 @@
  * @作者: 廖军
  * @Date: 2020-02-16 14:24:58
  * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-13 11:28:15
+ * @LastEditTime: 2020-04-18 14:41:58
  */
 const path = require('path');
 // 是否打包成cordova所需要的www文件内容
@@ -73,7 +73,9 @@ const config = {
     postcss: {
       pxtransform: {
         enable: true,
-        config: {},
+        config: {
+          selectorBlackList: [/^(?!\.at-).*/],
+        },
       },
       url: {
         enable: true,
