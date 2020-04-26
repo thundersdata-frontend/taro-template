@@ -4,7 +4,7 @@
  * @作者: 廖军
  * @Date: 2020-03-17 11:57:17
  * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-10 18:38:56
+ * @LastEditTime: 2020-04-26 09:59:19
  */
 import Taro, { Component, Config } from '@tarojs/taro';
 import lodashFix from '@/utils/lodash-fix.js';
@@ -12,6 +12,7 @@ import compatibility from '@/utils/compatibility';
 import { CustomWindow, GlobalData } from '@/interfaces/common';
 import 'taro-ui/dist/style/components/badge.scss';
 import 'taro-ui/dist/style/components/button.scss';
+import 'taro-ui/dist/style/components/search-bar.scss';
 import 'taro-ui/dist/style/components/loading.scss';
 import 'taro-ui/dist/style/components/float-layout.scss';
 import 'taro-ui/dist/style/components/avatar.scss';

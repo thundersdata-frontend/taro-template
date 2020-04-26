@@ -4,14 +4,14 @@
  * @作者: 廖军
  * @Date: 2020-02-16 14:24:58
  * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-18 14:41:58
+ * @LastEditTime: 2020-04-26 09:53:43
  */
 const path = require('path');
 // 是否打包成cordova所需要的www文件内容
 const isCordova = process.argv.includes('cordova');
 
 const config = {
-  projectName: 'taro-project',
+  projectName: 'taro-template',
   date: '2020-2-16',
   designWidth: 750,
   deviceRatio: {

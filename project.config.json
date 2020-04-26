@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "taro-project",
-  "description": "taro-project",
+  "projectname": "taro-template",
+  "description": "taro-template",
   "appid": "wx6d15af0c581c2ed7",
   "setting": {
     "urlCheck": true,
