@@ -3,11 +3,12 @@ import Taro, { useDidShow } from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import CustomButton from '@/components/CustomButton';
 import { BOTTOM_TABS_MAP } from '@/constant';
+import { setTabBarBadge } from '@/utils/tab';
 import styles from './index.module.less';
 
 const Home: Taro.FC = () => {
   useDidShow(() => {
-    Taro.setTabBarBadge({ index: BOTTOM_TABS_MAP.home, text: '99' });
+    setTabBarBadge({ index: BOTTOM_TABS_MAP.home, text: '99' });
   });
 
   return (
