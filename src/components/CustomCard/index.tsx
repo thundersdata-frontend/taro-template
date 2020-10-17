@@ -4,8 +4,9 @@
  * @作者: 廖军
  * @Date: 2020-03-05 10:51:42
  * @LastEditors: 廖军
- * @LastEditTime: 2020-04-07 14:47:27
+ * @LastEditTime: 2020-10-16 16:39:53
  */
+import React from 'react';
 import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import classnames from 'classnames';
@@ -27,9 +28,19 @@ export interface CustomCardProps {
 }
 
 const CustomCard: Taro.FC<CustomCardProps> = props => {
-  const { title, subtitle, extra = {}, children, style = {}, headerStyle = {} } = props;
+  const {
+    title,
+    subtitle,
+    extra = {},
+    children,
+    style = {},
+    headerStyle = {},
+  } = props;
   return (
-    <View style={style} className={classnames('my-class', props['my-class'], styles.card)}>
+    <View
+      style={style}
+      className={classnames('my-class', props['my-class'], styles.card)}
+    >
       <View style={headerStyle} className={styles.header}>
         <View>
           <View className={styles.title}>{title}</View>
@@ -37,7 +48,9 @@ const CustomCard: Taro.FC<CustomCardProps> = props => {
         </View>
         <View onClick={extra.onClick} className={styles.extra}>
           {extra.text && <Text>{extra.text}</Text>}
-          {extra.icon && <Iconfont style={{ fontSize: '12px' }} name={extra.icon} />}
+          {extra.icon && (
+            <Iconfont style={{ fontSize: '12px' }} name={extra.icon} />
+          )}
         </View>
       </View>
       <View className={styles.content}>{children}</View>

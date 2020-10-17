@@ -4,9 +4,10 @@
  * @作者: 廖军
  * @Date: 2020-02-28 11:20:41
  * @LastEditors: 廖军
- * @LastEditTime: 2020-02-28 13:50:28
+ * @LastEditTime: 2020-10-16 16:40:35
  */
-import Taro, { useState, useEffect } from '@tarojs/taro';
+import React, { useState, useEffect } from 'react';
+import Taro from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
 import QR from '@/utils/wxqrcode';
 import { tryCatch } from '@/utils/exception-handling';
@@ -18,7 +19,12 @@ export interface QRCodeProps {
   style?: React.CSSProperties;
 }
 
-const QRCode: Taro.FC<QRCodeProps> = ({ text, typeNumber = 5, style = {}, className = '' }) => {
+const QRCode: Taro.FC<QRCodeProps> = ({
+  text,
+  typeNumber = 5,
+  style = {},
+  className = '',
+}) => {
   const [url, setUrl] = useState('');
 
   useEffect(() => {

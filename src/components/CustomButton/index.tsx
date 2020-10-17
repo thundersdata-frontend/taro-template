@@ -3,9 +3,10 @@
  * @公司: thundersdata
  * @作者: 廖军
  * @Date: 2020-03-06 11:23:46
- * @LastEditors: 阮旭松
- * @LastEditTime: 2020-03-20 17:33:43
+ * @LastEditors: 廖军
+ * @LastEditTime: 2020-10-16 16:35:03
  */
+import React from 'react';
 import Taro from '@tarojs/taro';
 import { AtButton } from 'taro-ui';
 import classnames from 'classnames';
@@ -13,7 +14,13 @@ import { ITouchEvent } from '@tarojs/components/types/common';
 import { SizeType } from '@/interfaces/common';
 import { getClassArrayByComponentName } from '@/utils/array';
 
-export type ButtonType = 'primary' | 'dashed' | 'link' | 'solid' | 'disable' | 'graySolid';
+export type ButtonType =
+  | 'primary'
+  | 'dashed'
+  | 'link'
+  | 'solid'
+  | 'disable'
+  | 'graySolid';
 
 export interface CustomButtonProps {
   onClick?: (e: ITouchEvent) => void;
@@ -39,7 +46,11 @@ const CustomButton: Taro.FC<CustomButtonProps> = ({
       disabled={disabled}
       onClick={onClick}
       className={classnames(
-        ...getClassArrayByComponentName('customButton', ['btn', type, `${size}Size`]),
+        ...getClassArrayByComponentName('customButton', [
+          'btn',
+          type,
+          `${size}Size`,
+        ]),
         className,
       )}
     >

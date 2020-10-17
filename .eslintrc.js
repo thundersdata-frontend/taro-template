@@ -1,7 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
-    'taro',
+    'taro/react',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
     'plugin:react/recommended',
@@ -21,12 +21,11 @@ module.exports = {
     useJSXTextNode: true,
   },
   rules: {
-    'no-unused-vars': ['error', { varsIgnorePattern: 'Taro' }],
+    'no-unused-vars': ['error', { varsIgnorePattern: 'React' }],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx'] }],
     complexity: ['warn', { max: 6 }],
-    'no-unused-vars': 'off',
     'no-useless-constructor': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: 'React' }],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-use-before-define': 'off',
@@ -42,6 +41,8 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/no-commonjs': 'off',
     'react/no-multi-comp': 'off',
+    'react/jsx-uses-react': 'error',
+    '@typescript-eslint/ban-types': 'off',
   },
   overrides: [
     {

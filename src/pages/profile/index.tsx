@@ -3,26 +3,22 @@
  * @公司: thundersdata
  * @作者: 阮旭松
  * @Date: 2020-03-11 18:30:37
- * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-10 16:45:57
+ * @LastEditors: 廖军
+ * @LastEditTime: 2020-10-17 16:46:30
  */
-import Taro, { useDidShow, useState, useScope } from '@tarojs/taro';
+import Taro, { useDidShow } from '@tarojs/taro';
+import React, { useState } from 'react';
 import { View, OpenData } from '@tarojs/components';
 import { AtButton, AtAvatar } from 'taro-ui';
 import ListItemCard from '@/components/ListItemCard';
 import { tryCatch, checkIsLogin } from '@/utils/exception-handling';
-import { BOTTOM_TABS_MAP } from '@/stores/constant';
 import { transformSecretPhone } from '@/utils/string';
-import { setTabBarState } from '@/utils/object';
 import styles from './index.module.less';
 
 const Profile: Taro.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
 
-  const scope = useScope();
-
   useDidShow(async () => {
-    setTabBarState({ selected: BOTTOM_TABS_MAP.profile }, scope);
     tryCatch(async () => {
       // 检查登录状态
       const userIslogin = await checkIsLogin();
@@ -65,8 +61,13 @@ const Profile: Taro.FC = () => {
         </View>
         {isLogin ? (
           <View className={styles.userNameWrap}>
-            <OpenData className={styles.userName} type="userNickName"></OpenData>
-            <View className={styles.phoneWrap}>{transformSecretPhone('15711111111')}</View>
+            <OpenData
+              className={styles.userName}
+              type="userNickName"
+            ></OpenData>
+            <View className={styles.phoneWrap}>
+              {transformSecretPhone('15711111111')}
+            </View>
           </View>
         ) : (
           <AtButton
@@ -93,10 +94,6 @@ const Profile: Taro.FC = () => {
       )}
     </View>
   );
-};
-
-Profile.config = {
-  navigationBarTitleText: '我的',
 };
 
 export default Profile;

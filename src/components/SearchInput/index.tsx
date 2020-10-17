@@ -3,10 +3,11 @@
  * @公司: thundersdata
  * @作者: 阮旭松
  * @Date: 2020-04-26 09:50:56
- * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-26 09:51:26
+ * @LastEditors: 廖军
+ * @LastEditTime: 2020-10-16 16:40:54
  */
-import Taro, { useState, useEffect } from '@tarojs/taro';
+import React, { useState, useEffect } from 'react';
+import Taro from '@tarojs/taro';
 import { AtSearchBar } from 'taro-ui';
 import classnames from 'classnames';
 

@@ -4,8 +4,9 @@
  * @作者: 廖军
  * @Date: 2020-03-10 11:40:22
  * @LastEditors: 廖军
- * @LastEditTime: 2020-04-07 14:49:55
+ * @LastEditTime: 2020-10-16 16:39:24
  */
+import React from 'react';
 import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import classnames from 'classnames';
@@ -82,7 +83,9 @@ const ListItemCard: Taro.FC<ListItemCardProps> = props => {
           </View>
         )}
         {extraIcon && <Iconfont name={extraIcon} style={extraIconStyle} />}
-        {arrow && <Iconfont name={ARROW_ICON_NAME[arrow]} my-class={styles.arrowIcon} />}
+        {arrow && (
+          <Iconfont name={ARROW_ICON_NAME[arrow]} my-class={styles.arrowIcon} />
+        )}
       </View>
     </View>
   );

@@ -4,8 +4,9 @@
  * @作者: 廖军
  * @Date: 2020-03-05 09:41:03
  * @LastEditors: 廖军
- * @LastEditTime: 2020-04-07 14:52:24
+ * @LastEditTime: 2020-10-16 16:41:01
  */
+import React from 'react';
 import Taro from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
 import classnames from 'classnames';

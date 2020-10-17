@@ -12,5 +12,7 @@
  * @param componentName
  * @param classNames
  */
-export const getClassArrayByComponentName = (componentName: string, classNames: string[]) =>
-  classNames.map(classStr => `${componentName}-${classStr}`);
+export const getClassArrayByComponentName = (
+  componentName: string,
+  classNames: string[],
+) => classNames.map(classStr => `${componentName}-${classStr}`);

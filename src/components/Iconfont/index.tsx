@@ -4,8 +4,9 @@
  * @作者: 廖军
  * @Date: 2020-02-18 14:33:51
  * @LastEditors: 廖军
- * @LastEditTime: 2020-04-07 14:49:28
+ * @LastEditTime: 2020-10-16 16:40:14
  */
+import React from 'react';
 import Taro from '@tarojs/taro';
 import { Text } from '@tarojs/components';
 import { ITouchEvent } from '@tarojs/components/types/common';
