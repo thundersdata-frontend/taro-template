@@ -3,9 +3,10 @@
  * @公司: thundersdata
  * @作者: 阮旭松
  * @Date: 2020-03-10 17:30:39
- * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-10 14:42:42
+ * @LastEditors: 廖军
+ * @LastEditTime: 2020-10-17 16:42:08
  */
+import React from 'react';
 import Taro from '@tarojs/taro';
 import classnames from 'classnames';
 import { SizeType } from '@/interfaces/common';
@@ -31,7 +32,7 @@ interface BadgeProps {
   style?: React.CSSProperties;
 }
 
-const Badge: Taro.FC<BadgeProps> = props => {
+const Badge: Taro.FC<BadgeProps> = (props) => {
   const {
     dot,
     maxValue = MAX_OVERFIOW_NUMBER,

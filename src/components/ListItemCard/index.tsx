@@ -4,8 +4,9 @@
  * @作者: 廖军
  * @Date: 2020-03-10 11:40:22
  * @LastEditors: 廖军
- * @LastEditTime: 2020-04-07 14:49:55
+ * @LastEditTime: 2020-10-16 16:39:24
  */
+import React from 'react';
 import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import classnames from 'classnames';
@@ -43,7 +44,7 @@ const ARROW_ICON_NAME = Object.freeze({
   down: 'icon_nav_down',
 });
 
-const ListItemCard: Taro.FC<ListItemCardProps> = props => {
+const ListItemCard: Taro.FC<ListItemCardProps> = (props) => {
   const {
     title,
     titleStyle = {},
@@ -59,7 +60,7 @@ const ListItemCard: Taro.FC<ListItemCardProps> = props => {
   } = props;
   return (
     <View
-      onClick={e => onClick && onClick(e)}
+      onClick={(e) => onClick && onClick(e)}
       style={style}
       className={classnames(
         'my-class',

@@ -4,8 +4,9 @@
  * @作者: 廖军
  * @Date: 2020-03-09 10:33:58
  * @LastEditors: 廖军
- * @LastEditTime: 2020-04-07 14:39:31
+ * @LastEditTime: 2020-10-16 16:40:07
  */
+import React from 'react';
 import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import classnames from 'classnames';
@@ -19,11 +20,11 @@ export interface FlexContainerProps {
   onClick?: (e: ITouchEvent) => void;
 }
 
-const FlexContainer: Taro.FC<FlexContainerProps> = props => {
+const FlexContainer: Taro.FC<FlexContainerProps> = (props) => {
   const { type = 'flexBetween', children, style = {}, verticalType = 'center', onClick } = props;
   return (
     <View
-      onClick={e => onClick && onClick(e)}
+      onClick={(e) => onClick && onClick(e)}
       style={{ display: 'flex', ...style }}
       className={classnames(
         'my-class',

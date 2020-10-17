@@ -4,9 +4,10 @@
  * @作者: 廖军
  * @Date: 2020-03-04 10:24:21
  * @LastEditors: 廖军
- * @LastEditTime: 2020-04-07 14:42:46
+ * @LastEditTime: 2020-10-17 16:42:37
  */
-import Taro, { useState } from '@tarojs/taro';
+import React, { useState } from 'react';
+import Taro from '@tarojs/taro';
 import { Swiper, SwiperItem, Image, Video } from '@tarojs/components';
 import classnames from 'classnames';
 
@@ -24,7 +25,7 @@ export interface CarouselProps {
   autoplay?: boolean;
 }
 
-const Carousel: Taro.FC<CarouselProps> = props => {
+const Carousel: Taro.FC<CarouselProps> = (props) => {
   const { list = [], style = {}, autoplay = true } = props;
   const [current, setCurrent] = useState(0);
 
@@ -37,7 +38,7 @@ const Carousel: Taro.FC<CarouselProps> = props => {
       circular
       indicatorDots
       autoplay={autoplay}
-      onChange={e => setCurrent(e.detail.current)}
+      onChange={(e) => setCurrent(e.detail.current)}
     >
       {list.map((item, index) => {
         const { url, src, type = 'image', loop = true } = item;

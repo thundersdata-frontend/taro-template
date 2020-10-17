@@ -4,8 +4,9 @@
  * @作者: 廖军
  * @Date: 2020-03-19 10:43:49
  * @LastEditors: 廖军
- * @LastEditTime: 2020-04-07 14:50:57
+ * @LastEditTime: 2020-10-16 16:40:43
  */
+import React from 'react';
 import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import classnames from 'classnames';
@@ -16,7 +17,7 @@ interface ScrollEmptyProps {
   style?: React.CSSProperties;
 }
 
-const ScrollEmpty: Taro.FC<ScrollEmptyProps> = props => {
+const ScrollEmpty: Taro.FC<ScrollEmptyProps> = (props) => {
   const { text = '到底了，再看看别的分类吧', style = {} } = props;
   return (
     <View style={style} className={classnames('my-class', props['my-class'], styles.container)}>

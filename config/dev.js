@@ -4,7 +4,7 @@
  * @作者: 廖军
  * @Date: 2020-02-16 14:24:58
  * @LastEditors: 廖军
- * @LastEditTime: 2020-03-12 13:50:24
+ * @LastEditTime: 2020-10-17 10:22:37
  */
 module.exports = {
   env: {
@@ -29,5 +29,7 @@ module.exports = {
     },
   },
   mini: {},
-  h5: {},
+  h5: {
+    esnextModules: ['taro-ui'],
+  },
 };

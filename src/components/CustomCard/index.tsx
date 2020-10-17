@@ -4,8 +4,9 @@
  * @作者: 廖军
  * @Date: 2020-03-05 10:51:42
  * @LastEditors: 廖军
- * @LastEditTime: 2020-04-07 14:47:27
+ * @LastEditTime: 2020-10-16 16:39:53
  */
+import React from 'react';
 import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import classnames from 'classnames';
@@ -26,7 +27,7 @@ export interface CustomCardProps {
   style?: React.CSSProperties;
 }
 
-const CustomCard: Taro.FC<CustomCardProps> = props => {
+const CustomCard: Taro.FC<CustomCardProps> = (props) => {
   const { title, subtitle, extra = {}, children, style = {}, headerStyle = {} } = props;
   return (
     <View style={style} className={classnames('my-class', props['my-class'], styles.card)}>

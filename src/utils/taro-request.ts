@@ -68,7 +68,7 @@ const addQueryUrl = (url: string, params?: object) => {
     return url;
   }
   const addStr = Object.keys(params)
-    .map(key => `${key}=${params[key]}`)
+    .map((key) => `${key}=${params[key]}`)
     .join('&');
   if (url.split('?').length > 1) {
     return `${url}&${addStr}`;
@@ -120,11 +120,11 @@ const generalMethods: {
   },
 ];
 const requestConfig = {};
-generalMethods.forEach(item => {
+generalMethods.forEach((item) => {
   const { key, method } = item;
   if (method === 'POST') {
     // post url携带参数
-    requestConfig[key] = async function<T>(
+    requestConfig[key] = async function <T>(
       url: string,
       data?: object,
       params?: object,
@@ -160,7 +160,7 @@ generalMethods.forEach(item => {
       });
     };
   } else {
-    requestConfig[key] = async function<T>(url: string, data?: object, needLogin = true) {
+    requestConfig[key] = async function <T>(url: string, data?: object, needLogin = true) {
       const { getToken, withCredentials } =
         (needLogin && ((global as unknown) as CustomWindow).requestConfig) || {};
       if (needLogin && getToken) {

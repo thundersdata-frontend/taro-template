@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "rootDir": ".",
     "jsx": "preserve",
-    "jsxFactory": "Taro.createElement",
+    "jsxFactory": "React.createElement",
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": ["node_modules/@types", "global.d.ts"],
@@ -24,7 +24,6 @@
     "paths": {
       "@/*": ["src/*"],
       "@/utils": ["src/utils"],
-      "@/stores": ["src/stores"],
       "@/services": ["src/services"],
       "@/components": ["src/components"]
     }

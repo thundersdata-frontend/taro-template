@@ -4,9 +4,10 @@
  * @作者: 阮旭松
  * @Date: 2020-03-27 13:38:23
  * @LastEditors: 廖军
- * @LastEditTime: 2020-04-01 17:06:18
+ * @LastEditTime: 2020-10-17 11:38:04
  */
-import Taro, { useState } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import { useState } from 'react';
 
 const useRefresh: () => [
   boolean,
@@ -21,14 +22,14 @@ const useRefresh: () => [
    * @返回值:
    */
   const handleCallBack = (functionList: Function[]) => {
-    const promiseList = functionList.map(func => {
+    const promiseList = functionList.map((func) => {
       return (() =>
-        new Promise(async resolve => {
+        new Promise(async (resolve) => {
           await func();
           resolve(true);
         }))();
     });
-    return Promise.all(promiseList).catch(error => {
+    return Promise.all(promiseList).catch((error) => {
       Taro.showToast({
         title: error.message,
         icon: 'none',

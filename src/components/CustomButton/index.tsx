@@ -3,9 +3,10 @@
  * @公司: thundersdata
  * @作者: 廖军
  * @Date: 2020-03-06 11:23:46
- * @LastEditors: 阮旭松
- * @LastEditTime: 2020-03-20 17:33:43
+ * @LastEditors: 廖军
+ * @LastEditTime: 2020-10-16 16:35:03
  */
+import React from 'react';
 import Taro from '@tarojs/taro';
 import { AtButton } from 'taro-ui';
 import classnames from 'classnames';
