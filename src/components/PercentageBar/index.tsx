@@ -17,11 +17,17 @@ export interface PercentageBarProps {
   style?: React.CSSProperties;
 }
 
-const PercentageBar: Taro.FC<PercentageBarProps> = (props) => {
+const PercentageBar: Taro.FC<PercentageBarProps> = props => {
   const { value, style = {} } = props;
   return (
-    <View style={style} className={classnames('my-class', props['my-class'], styles.bar)}>
-      <View style={{ width: `${value > 100 ? 100 : value}%` }} className={styles.percentage} />
+    <View
+      style={style}
+      className={classnames('my-class', props['my-class'], styles.bar)}
+    >
+      <View
+        style={{ width: `${value > 100 ? 100 : value}%` }}
+        className={styles.percentage}
+      />
     </View>
   );
 };

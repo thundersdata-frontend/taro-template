@@ -27,10 +27,20 @@ export interface CustomCardProps {
   style?: React.CSSProperties;
 }
 
-const CustomCard: Taro.FC<CustomCardProps> = (props) => {
-  const { title, subtitle, extra = {}, children, style = {}, headerStyle = {} } = props;
+const CustomCard: Taro.FC<CustomCardProps> = props => {
+  const {
+    title,
+    subtitle,
+    extra = {},
+    children,
+    style = {},
+    headerStyle = {},
+  } = props;
   return (
-    <View style={style} className={classnames('my-class', props['my-class'], styles.card)}>
+    <View
+      style={style}
+      className={classnames('my-class', props['my-class'], styles.card)}
+    >
       <View style={headerStyle} className={styles.header}>
         <View>
           <View className={styles.title}>{title}</View>
@@ -38,7 +48,9 @@ const CustomCard: Taro.FC<CustomCardProps> = (props) => {
         </View>
         <View onClick={extra.onClick} className={styles.extra}>
           {extra.text && <Text>{extra.text}</Text>}
-          {extra.icon && <Iconfont style={{ fontSize: '12px' }} name={extra.icon} />}
+          {extra.icon && (
+            <Iconfont style={{ fontSize: '12px' }} name={extra.icon} />
+          )}
         </View>
       </View>
       <View className={styles.content}>{children}</View>

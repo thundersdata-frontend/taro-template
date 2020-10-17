@@ -20,11 +20,17 @@ export interface FlexContainerProps {
   onClick?: (e: ITouchEvent) => void;
 }
 
-const FlexContainer: Taro.FC<FlexContainerProps> = (props) => {
-  const { type = 'flexBetween', children, style = {}, verticalType = 'center', onClick } = props;
+const FlexContainer: Taro.FC<FlexContainerProps> = props => {
+  const {
+    type = 'flexBetween',
+    children,
+    style = {},
+    verticalType = 'center',
+    onClick,
+  } = props;
   return (
     <View
-      onClick={(e) => onClick && onClick(e)}
+      onClick={e => onClick && onClick(e)}
       style={{ display: 'flex', ...style }}
       className={classnames(
         'my-class',

@@ -12,7 +12,9 @@ const Home: Taro.FC = () => {
 
   return (
     <View className={styles.container}>
-      <CustomButton onClick={() => Taro.navigateTo({ url: '/packageA/pages/detail/index' })}>
+      <CustomButton
+        onClick={() => Taro.navigateTo({ url: '/packageA/pages/detail/index' })}
+      >
         前往详情页
       </CustomButton>
     </View>

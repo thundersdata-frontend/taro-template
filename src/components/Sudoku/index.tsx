@@ -23,7 +23,7 @@ export interface SudokuProps {
   style?: React.CSSProperties;
 }
 
-const Sudoku: Taro.FC<SudokuProps> = (props) => {
+const Sudoku: Taro.FC<SudokuProps> = props => {
   const { list = [], style = {} } = props;
   return (
     <View className={classnames('my-class', props['my-class'], styles.sudoku)}>

@@ -14,7 +14,13 @@ import { ITouchEvent } from '@tarojs/components/types/common';
 import { SizeType } from '@/interfaces/common';
 import { getClassArrayByComponentName } from '@/utils/array';
 
-export type ButtonType = 'primary' | 'dashed' | 'link' | 'solid' | 'disable' | 'graySolid';
+export type ButtonType =
+  | 'primary'
+  | 'dashed'
+  | 'link'
+  | 'solid'
+  | 'disable'
+  | 'graySolid';
 
 export interface CustomButtonProps {
   onClick?: (e: ITouchEvent) => void;
@@ -40,7 +46,11 @@ const CustomButton: Taro.FC<CustomButtonProps> = ({
       disabled={disabled}
       onClick={onClick}
       className={classnames(
-        ...getClassArrayByComponentName('customButton', ['btn', type, `${size}Size`]),
+        ...getClassArrayByComponentName('customButton', [
+          'btn',
+          type,
+          `${size}Size`,
+        ]),
         className,
       )}
     >

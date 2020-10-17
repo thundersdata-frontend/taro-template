@@ -14,7 +14,7 @@
  */
 export const getCompareObjectByKeys = (keys: string[], obj: object) => {
   const compareObj = {};
-  Object.keys(keys).map((key) => {
+  Object.keys(keys).map(key => {
     compareObj[key] = obj[key];
   });
   return compareObj;
@@ -26,6 +26,10 @@ export const getCompareObjectByKeys = (keys: string[], obj: object) => {
  * @param prev
  * @param next
  */
-export const isComponentNeedUpdate = (keys: string[], prev: object, next: object) =>
+export const isComponentNeedUpdate = (
+  keys: string[],
+  prev: object,
+  next: object,
+) =>
   JSON.stringify(getCompareObjectByKeys(keys, prev)) !==
   JSON.stringify(getCompareObjectByKeys(keys, next));

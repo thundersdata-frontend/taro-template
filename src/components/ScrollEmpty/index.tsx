@@ -17,10 +17,13 @@ interface ScrollEmptyProps {
   style?: React.CSSProperties;
 }
 
-const ScrollEmpty: Taro.FC<ScrollEmptyProps> = (props) => {
+const ScrollEmpty: Taro.FC<ScrollEmptyProps> = props => {
   const { text = '到底了，再看看别的分类吧', style = {} } = props;
   return (
-    <View style={style} className={classnames('my-class', props['my-class'], styles.container)}>
+    <View
+      style={style}
+      className={classnames('my-class', props['my-class'], styles.container)}
+    >
       <Text>{text}</Text>
     </View>
   );

@@ -22,14 +22,14 @@ const useRefresh: () => [
    * @返回值:
    */
   const handleCallBack = (functionList: Function[]) => {
-    const promiseList = functionList.map((func) => {
+    const promiseList = functionList.map(func => {
       return (() =>
-        new Promise(async (resolve) => {
+        new Promise(async resolve => {
           await func();
           resolve(true);
         }))();
     });
-    return Promise.all(promiseList).catch((error) => {
+    return Promise.all(promiseList).catch(error => {
       Taro.showToast({
         title: error.message,
         icon: 'none',

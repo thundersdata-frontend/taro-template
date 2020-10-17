@@ -68,7 +68,7 @@ const addQueryUrl = (url: string, params?: object) => {
     return url;
   }
   const addStr = Object.keys(params)
-    .map((key) => `${key}=${params[key]}`)
+    .map(key => `${key}=${params[key]}`)
     .join('&');
   if (url.split('?').length > 1) {
     return `${url}&${addStr}`;
@@ -79,7 +79,15 @@ const addQueryUrl = (url: string, params?: object) => {
 
 const generalMethods: {
   key: string;
-  method?: 'GET' | 'OPTIONS' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'CONNECT';
+  method?:
+    | 'GET'
+    | 'OPTIONS'
+    | 'HEAD'
+    | 'POST'
+    | 'PUT'
+    | 'DELETE'
+    | 'TRACE'
+    | 'CONNECT';
   'Content-Type'?: string;
 }[] = [
   {
@@ -120,7 +128,7 @@ const generalMethods: {
   },
 ];
 const requestConfig = {};
-generalMethods.forEach((item) => {
+generalMethods.forEach(item => {
   const { key, method } = item;
   if (method === 'POST') {
     // post url携带参数
@@ -131,7 +139,8 @@ generalMethods.forEach((item) => {
       needLogin = true,
     ) {
       const { getToken, withCredentials } =
-        (needLogin && ((global as unknown) as CustomWindow).requestConfig) || {};
+        (needLogin && ((global as unknown) as CustomWindow).requestConfig) ||
+        {};
       if (needLogin && getToken) {
         const token = await getToken();
         const header = {
@@ -160,9 +169,14 @@ generalMethods.forEach((item) => {
       });
     };
   } else {
-    requestConfig[key] = async function <T>(url: string, data?: object, needLogin = true) {
+    requestConfig[key] = async function <T>(
+      url: string,
+      data?: object,
+      needLogin = true,
+    ) {
       const { getToken, withCredentials } =
-        (needLogin && ((global as unknown) as CustomWindow).requestConfig) || {};
+        (needLogin && ((global as unknown) as CustomWindow).requestConfig) ||
+        {};
       if (needLogin && getToken) {
         const token = await getToken();
         const header = {
@@ -199,8 +213,16 @@ export interface HttpProps {
   get: <T>(url: string, option?: object) => Promise<Taro.RequestTask<T>>;
   put: <T>(url: string, option?: object) => Promise<Taro.RequestTask<T>>;
   delete: <T>(url: string, option?: object) => Promise<Taro.RequestTask<T>>;
-  postForm: <T>(url: string, data?: object, params?: object) => Promise<Taro.RequestTask<T>>;
-  postJSON: <T>(url: string, data?: object, params?: object) => Promise<Taro.RequestTask<T>>;
+  postForm: <T>(
+    url: string,
+    data?: object,
+    params?: object,
+  ) => Promise<Taro.RequestTask<T>>;
+  postJSON: <T>(
+    url: string,
+    data?: object,
+    params?: object,
+  ) => Promise<Taro.RequestTask<T>>;
   authGet: <T>(url: string, option?: object) => Promise<Taro.RequestTask<T>>;
   authForm: <T>(url: string, data?: object) => Promise<Taro.RequestTask<T>>;
 }

@@ -44,7 +44,7 @@ const ARROW_ICON_NAME = Object.freeze({
   down: 'icon_nav_down',
 });
 
-const ListItemCard: Taro.FC<ListItemCardProps> = (props) => {
+const ListItemCard: Taro.FC<ListItemCardProps> = props => {
   const {
     title,
     titleStyle = {},
@@ -60,7 +60,7 @@ const ListItemCard: Taro.FC<ListItemCardProps> = (props) => {
   } = props;
   return (
     <View
-      onClick={(e) => onClick && onClick(e)}
+      onClick={e => onClick && onClick(e)}
       style={style}
       className={classnames(
         'my-class',
@@ -83,7 +83,9 @@ const ListItemCard: Taro.FC<ListItemCardProps> = (props) => {
           </View>
         )}
         {extraIcon && <Iconfont name={extraIcon} style={extraIconStyle} />}
-        {arrow && <Iconfont name={ARROW_ICON_NAME[arrow]} my-class={styles.arrowIcon} />}
+        {arrow && (
+          <Iconfont name={ARROW_ICON_NAME[arrow]} my-class={styles.arrowIcon} />
+        )}
       </View>
     </View>
   );

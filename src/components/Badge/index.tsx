@@ -32,7 +32,7 @@ interface BadgeProps {
   style?: React.CSSProperties;
 }
 
-const Badge: Taro.FC<BadgeProps> = (props) => {
+const Badge: Taro.FC<BadgeProps> = props => {
   const {
     dot,
     maxValue = MAX_OVERFIOW_NUMBER,
@@ -45,7 +45,13 @@ const Badge: Taro.FC<BadgeProps> = (props) => {
   const displayNumber = value === ZERO_NUMBER ? '' : value;
   return (
     <AtBadge
-      className={classnames('badge', `${size}-badge`, className, 'my-class', props['my-class'])}
+      className={classnames(
+        'badge',
+        `${size}-badge`,
+        className,
+        'my-class',
+        props['my-class'],
+      )}
       value={displayNumber}
       dot={dot}
       maxValue={maxValue}

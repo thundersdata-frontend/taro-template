@@ -29,7 +29,7 @@ const Profile: Taro.FC = () => {
   });
 
   // 调用获取手机号等信息
-  const getPhoneNumber = (e) => {
+  const getPhoneNumber = e => {
     // 若点击允许
     if (e.detail.errMsg.indexOf('ok') > -1) {
       // e.detail.encryptedData为加密数据，向后端请求解密的手机号
@@ -61,8 +61,13 @@ const Profile: Taro.FC = () => {
         </View>
         {isLogin ? (
           <View className={styles.userNameWrap}>
-            <OpenData className={styles.userName} type="userNickName"></OpenData>
-            <View className={styles.phoneWrap}>{transformSecretPhone('15711111111')}</View>
+            <OpenData
+              className={styles.userName}
+              type="userNickName"
+            ></OpenData>
+            <View className={styles.phoneWrap}>
+              {transformSecretPhone('15711111111')}
+            </View>
           </View>
         ) : (
           <AtButton

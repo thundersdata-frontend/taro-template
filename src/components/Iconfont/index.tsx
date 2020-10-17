@@ -18,11 +18,11 @@ export interface IconfontProps {
   onClick?: (e: ITouchEvent) => void;
 }
 
-const Iconfont: Taro.FC<IconfontProps> = (props) => {
+const Iconfont: Taro.FC<IconfontProps> = props => {
   const { name, style = {}, onClick } = props;
   return (
     <Text
-      onClick={(e) => onClick && onClick(e)}
+      onClick={e => onClick && onClick(e)}
       style={style}
       className={classnames('iconfont', name, 'my-class', props['my-class'])}
     />

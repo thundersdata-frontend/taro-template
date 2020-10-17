@@ -19,7 +19,12 @@ export interface QRCodeProps {
   style?: React.CSSProperties;
 }
 
-const QRCode: Taro.FC<QRCodeProps> = ({ text, typeNumber = 5, style = {}, className = '' }) => {
+const QRCode: Taro.FC<QRCodeProps> = ({
+  text,
+  typeNumber = 5,
+  style = {},
+  className = '',
+}) => {
   const [url, setUrl] = useState('');
 
   useEffect(() => {
