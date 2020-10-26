@@ -3,8 +3,8 @@
  * @公司: thundersdata
  * @作者: 廖军
  * @Date: 2020-10-16 13:39:42
- * @LastEditors: 廖军
- * @LastEditTime: 2020-10-17 16:33:22
+ * @LastEditors: 阮旭松
+ * @LastEditTime: 2020-10-23 16:31:31
  */
 
 export default {
@@ -34,8 +34,8 @@ export default {
   // 分包
   subPackages: [
     {
-      root: 'packageA',
-      pages: ['pages/detail/index'],
+      root: 'packageA/pages/',
+      pages: ['detail/index'],
     },
   ],
   window: {

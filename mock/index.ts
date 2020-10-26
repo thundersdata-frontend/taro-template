@@ -3,13 +3,13 @@
  * @公司: thundersdata
  * @作者: 廖军
  * @Date: 2020-03-05 15:37:04
- * @LastEditors: 廖军
- * @LastEditTime: 2020-04-01 14:43:59
+ * @LastEditors: 阮旭松
+ * @LastEditTime: 2020-10-23 16:21:26
  */
 
 export default {
   // 商品列表
-  'commodity/list': {
+  '/commodity/list': {
     code: 2000,
     message: '',
     success: true,
@@ -18,7 +18,8 @@ export default {
         commoditySn: 'C-sda34123-131',
         productTitle: '四川红芽姜现挖新鲜仔姜',
         productSubtitle: '醋泡姜生姜菜姜',
-        coverImage: 'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
+        coverImage:
+          'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
         fullCategoryPaht: '果蔬/绿叶青',
         originPrice: 1060,
         sellingPrice: 1460,
@@ -49,7 +50,8 @@ export default {
         commoditySn: 'C-sda34123-132',
         productTitle: '小贝贝南瓜当季新鲜',
         productSubtitle: '当季迷你小南瓜板栗子味',
-        coverImage: 'http://talkimages.cn/images/medium/20153237/tkf005_2324427.jpg',
+        coverImage:
+          'http://talkimages.cn/images/medium/20153237/tkf005_2324427.jpg',
         fullCategoryPaht: '果蔬/绿叶青',
         originPrice: 1460,
         sellingPrice: 1990,
@@ -111,7 +113,8 @@ export default {
         commoditySn: 'C-sda34123-134',
         productTitle: '山东大蒜新鲜蒜头干蒜多瓣蒜',
         productSubtitle: '深山现挖 嫩脆爽口 蔬中一绝',
-        coverImage: 'http://img2.imgtn.bdimg.com/it/u=2221745333,2116502191&fm=26&gp=0.jpg',
+        coverImage:
+          'http://img2.imgtn.bdimg.com/it/u=2221745333,2116502191&fm=26&gp=0.jpg',
         fullCategoryPaht: '果蔬/绿叶青',
         originPrice: 460,
         sellingPrice: 580,
@@ -141,7 +144,7 @@ export default {
     ],
   },
   // 商品详情
-  'commodity/detail': {
+  '/commodity/detail': {
     code: 2000,
     message: '',
     success: true,
@@ -200,14 +203,14 @@ export default {
     },
   },
   // 历史记录
-  'history/list': {
+  '/history/list': {
     code: 2000,
     message: '',
     success: true,
     data: ['叶菜类', '小贝贝南瓜', '孢子甘蓝'],
   },
   // 订单列表
-  'order/list': {
+  '/order/list': {
     code: 2000,
     message: '',
     success: true,
@@ -220,7 +223,8 @@ export default {
             commoditySn: 'C-sda34123-131',
             productTitle: '四川红芽姜现挖新鲜仔姜',
             productSubtitle: '醋泡姜生姜菜姜',
-            coverImage: 'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
+            coverImage:
+              'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
             fullCategoryPaht: '果蔬/绿叶青',
             originPrice: 1060,
             sellingPrice: 1460,
@@ -241,7 +245,8 @@ export default {
             commoditySn: 'C-sda34123-131',
             productTitle: '四川红芽姜现挖新鲜仔姜',
             productSubtitle: '醋泡姜生姜菜姜',
-            coverImage: 'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
+            coverImage:
+              'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
             fullCategoryPaht: '果蔬/绿叶青',
             originPrice: 1060,
             sellingPrice: 1460,
@@ -256,7 +261,8 @@ export default {
             commoditySn: 'C-sda34123-132',
             productTitle: '小贝贝南瓜当季新鲜',
             productSubtitle: '当季迷你小南瓜板栗子味',
-            coverImage: 'http://talkimages.cn/images/medium/20153237/tkf005_2324427.jpg',
+            coverImage:
+              'http://talkimages.cn/images/medium/20153237/tkf005_2324427.jpg',
             fullCategoryPaht: '果蔬/绿叶青',
             originPrice: 1460,
             sellingPrice: 1990,
@@ -277,7 +283,8 @@ export default {
             commoditySn: 'C-sda34123-131',
             productTitle: '四川红芽姜现挖新鲜仔姜',
             productSubtitle: '醋泡姜生姜菜姜',
-            coverImage: 'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
+            coverImage:
+              'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
             fullCategoryPaht: '果蔬/绿叶青',
             originPrice: 1060,
             sellingPrice: 1460,
@@ -298,7 +305,8 @@ export default {
             commoditySn: 'C-sda34123-131',
             productTitle: '四川红芽姜现挖新鲜仔姜',
             productSubtitle: '醋泡姜生姜菜姜',
-            coverImage: 'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
+            coverImage:
+              'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
             fullCategoryPaht: '果蔬/绿叶青',
             originPrice: 1060,
             sellingPrice: 1460,
@@ -319,7 +327,8 @@ export default {
             commoditySn: 'C-sda34123-131',
             productTitle: '四川红芽姜现挖新鲜仔姜',
             productSubtitle: '醋泡姜生姜菜姜',
-            coverImage: 'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
+            coverImage:
+              'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
             fullCategoryPaht: '果蔬/绿叶青',
             originPrice: 1060,
             sellingPrice: 1460,
@@ -340,7 +349,8 @@ export default {
             commoditySn: 'C-sda34123-131',
             productTitle: '四川红芽姜现挖新鲜仔姜',
             productSubtitle: '醋泡姜生姜菜姜',
-            coverImage: 'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
+            coverImage:
+              'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
             fullCategoryPaht: '果蔬/绿叶青',
             originPrice: 1060,
             sellingPrice: 1460,
@@ -361,7 +371,8 @@ export default {
             commoditySn: 'C-sda34123-131',
             productTitle: '四川红芽姜现挖新鲜仔姜',
             productSubtitle: '醋泡姜生姜菜姜',
-            coverImage: 'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
+            coverImage:
+              'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
             fullCategoryPaht: '果蔬/绿叶青',
             originPrice: 1060,
             sellingPrice: 1460,
@@ -382,7 +393,8 @@ export default {
             commoditySn: 'C-sda34123-131',
             productTitle: '四川红芽姜现挖新鲜仔姜',
             productSubtitle: '醋泡姜生姜菜姜',
-            coverImage: 'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
+            coverImage:
+              'http://img2.imgtn.bdimg.com/it/u=2596602715,2309989475&fm=11&gp=0.jpg',
             fullCategoryPaht: '果蔬/绿叶青',
             originPrice: 1060,
             sellingPrice: 1460,

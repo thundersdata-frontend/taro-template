@@ -5,11 +5,13 @@
  * @作者: 廖军
  * @Date: 2020-02-19 10:40:13
  * @LastEditors: 阮旭松
- * @LastEditTime: 2020-04-07 15:35:08
+ * @LastEditTime: 2020-10-26 17:24:22
  */
 import Taro from '@tarojs/taro';
 import { CustomWindow } from '@/interfaces/common';
+import { MOCK_URL } from '@/constant';
 import { handleRedirect } from './exception-handling';
+import mockData from '../../mock';
 
 export interface AjaxResponse<T> {
   code: number;
@@ -226,3 +228,19 @@ export interface HttpProps {
   authGet: <T>(url: string, option?: object) => Promise<Taro.RequestTask<T>>;
   authForm: <T>(url: string, data?: object) => Promise<Taro.RequestTask<T>>;
 }
+
+/**
+ * @功能描述: 简易 mock 接口请求
+ * @参数: 接口地址,eg: '/address/list'
+ * @返回值: mock 数据
+ * @param {string} url
+ */
+export const mockRequest = async (url: string) => {
+  if (process.env.TARO_ENV === 'h5') {
+    return Promise.resolve(mockData[url]) || {};
+  }
+  const result = await Taro.request({
+    url: `${MOCK_URL}${url}`,
+  });
+  return result.data;
+};

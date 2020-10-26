@@ -3,8 +3,8 @@
  * @公司: thundersdata
  * @作者: 廖军
  * @Date: 2020-02-16 14:24:58
- * @LastEditors: 廖军
- * @LastEditTime: 2020-10-17 16:35:30
+ * @LastEditors: 阮旭松
+ * @LastEditTime: 2020-10-26 17:04:26
  */
 const path = require('path');
 // 是否打包成cordova所需要的www文件内容
@@ -67,7 +67,7 @@ const config = {
       ],
     ],
   },
-  plugins: [],
+  plugins: ['@tarojs/plugin-mock'],
   defineConstants: {},
   framework: 'react',
   mini: {
@@ -108,7 +108,7 @@ const config = {
         config: {},
       },
       cssModules: {
-        enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+        enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]',

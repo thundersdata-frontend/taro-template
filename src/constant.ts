@@ -3,9 +3,10 @@
  * @公司: thundersdata
  * @作者: 廖军
  * @Date: 2020-03-03 16:07:01
- * @LastEditors: 廖军
- * @LastEditTime: 2020-10-16 18:06:25
+ * @LastEditors: 阮旭松
+ * @LastEditTime: 2020-10-23 16:20:15
  */
+export const MOCK_URL = 'http://127.0.0.1:9527';
 
 // 初始化分页请求参数
 export const INITIAL_PAGINATION = {
